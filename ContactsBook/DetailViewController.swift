@@ -10,16 +10,28 @@ import UIKit
 
 class DetailViewController: UIViewController {
     var name_surname: String?
+    var phone: String?
+    var image: UIImage?
+    var id: Int?
+    var model: Contacts?
+    var deletedAccount: Bool = false
     
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var nameSurnameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         nameSurnameLabel.text = name_surname
+        phoneLabel.text = phone
+        imageView.image = image
         // Do any additional setup after loading the view.
     }
     
     @IBAction func closePressed(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+//        model?.deleteContact(id!)
+         deletedAccount = true
+        performSegue(withIdentifier: "unwindToContactList", sender: self)
+//        navigationController?.popViewController(animated: true)
     }
     
     /*

@@ -16,6 +16,7 @@
 		CE00103D25D24FD900865E32 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00103C25D24FD900865E32 /* CustomCell.swift */; };
 		CE00103F25D2576C00865E32 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00103E25D2576C00865E32 /* DetailViewController.swift */; };
 		CE00104125D2623100865E32 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00104025D2623100865E32 /* AddViewController.swift */; };
+		CEE7B38725D2A4EB00FAE7E5 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7B38625D2A4EB00FAE7E5 /* Contacts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		CE00103C25D24FD900865E32 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		CE00103E25D2576C00865E32 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CE00104025D2623100865E32 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		CEE7B38625D2A4EB00FAE7E5 /* Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				CE00103C25D24FD900865E32 /* CustomCell.swift */,
 				CE00103E25D2576C00865E32 /* DetailViewController.swift */,
 				CE00104025D2623100865E32 /* AddViewController.swift */,
+				CEE7B38625D2A4EB00FAE7E5 /* Contacts.swift */,
 			);
 			path = ContactsBook;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				CE00103F25D2576C00865E32 /* DetailViewController.swift in Sources */,
 				CE00103D25D24FD900865E32 /* CustomCell.swift in Sources */,
 				CE00102725D2434100865E32 /* AppDelegate.swift in Sources */,
+				CEE7B38725D2A4EB00FAE7E5 /* Contacts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
