@@ -7,12 +7,14 @@
 //
 
 import UIKit
+var model = Contacts()
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var model = Contacts()
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.getContacts().count
-    }
+    
+    var deletedAcc: Int?
+    var newName: String?
+    var newPhone: String?
+    var newImage: String?
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as? CustomCell
@@ -22,7 +24,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell!
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
+        
         myTableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -32,29 +34,68 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
         }
     }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if model.getContacts().count == 0 {
+            myTableView.setEmptyMessage("Empty contact list")
+        } else {
+            myTableView.restore()
+        }
         
+        return model.getContacts().count
+    }
+    
     @IBOutlet weak var myTableView: UITableView!
     override func viewDidLoad() {
-        myTableView.reloadData()
         super.viewDidLoad()
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        if(deletedAcc != nil)
+        {
+            performDelete()
+        }
+        if(newName != nil)
+        {
+            performAdd()
+        }
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "mySegue"){
-        let destination = segue.destination as! DetailViewController
-        let index = (myTableView.indexPathForSelectedRow?.row)!
-        destination.name_surname = model.getContacts()[index].name_surname
+            let destination = segue.destination as! DetailViewController
+            let index = (myTableView.indexPathForSelectedRow?.row)!
+            destination.name_surname = model.getContacts()[index].name_surname
             destination.phone = model.getContacts()[index].phone_number
             destination.image = model.getContacts()[index].image
             destination.id = index
             destination.model = model
         }
-        else{
+        else if(segue.identifier == "addSeque"){
             let destination = segue.destination as! AddViewController
             destination.model = model
         }
+        
     }
-
+    func performDelete(){
+        model.deleteContact(deletedAcc!)
+        deletedAcc = nil
+        myTableView.reloadData()
+    }
+    func performAdd(){
+        let imageUI = UIImage.init(named: newImage!)
+        model.addContact(Contact(newName!, newPhone!, imageUI!))
+        newName = nil
+        newPhone = nil
+        newImage = nil
+        myTableView.beginUpdates()
+        myTableView.insertRows(at: [
+            NSIndexPath(row: model.getContacts().count-1, section: 0) as IndexPath], with: .automatic)
+        myTableView.endUpdates()
+        // myTableView.reloadData()
+    }
+    
+    
 }
 

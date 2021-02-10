@@ -107,6 +107,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOM-xW-8fD">
+                                <rect key="frame" x="16" y="564" width="343" height="34"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Call">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Surname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wL-jh-J88">
+                                <rect key="frame" x="83" y="32" width="288" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luY-hx-PHh">
+                                <rect key="frame" x="87" y="56.5" width="288" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yYE-rZ-ntJ">
+                                <rect key="frame" x="16" y="32" width="75" height="73"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="75g-4x-3aJ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="73" id="GkI-0c-gzr"/>
+                                    <constraint firstAttribute="height" constant="73" id="QaK-yU-tBb"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKP-sb-hdD">
                                 <rect key="frame" x="16" y="617" width="343" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.36451290159999999" blue="0.28028185329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -115,39 +142,9 @@
                                 </constraints>
                                 <state key="normal" title="Delete"/>
                                 <connections>
-                                    <action selector="closePressed:" destination="gZr-p6-VrS" eventType="touchUpInside" id="NFE-w8-Hmi"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="goToContactList" id="Hb6-QG-AbC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOM-xW-8fD">
-                                <rect key="frame" x="16" y="568" width="343" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Call">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="closePressed:" destination="gZr-p6-VrS" eventType="touchUpInside" id="4xa-Pn-fVT"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Surname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wL-jh-J88">
-                                <rect key="frame" x="83" y="76" width="288" height="20.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luY-hx-PHh">
-                                <rect key="frame" x="87" y="100.5" width="288" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yYE-rZ-ntJ">
-                                <rect key="frame" x="16" y="76" width="75" height="73"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="75g-4x-3aJ"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="73" id="GkI-0c-gzr"/>
-                                    <constraint firstAttribute="height" constant="73" id="QaK-yU-tBb"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -194,19 +191,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name and surname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hzi-Ip-fLN">
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name and surname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hzi-Ip-fLN">
                                 <rect key="frame" x="16" y="85" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uTF-LH-MFz">
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uTF-LH-MFz">
                                 <rect key="frame" x="16" y="146" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7v-Yg-7lE">
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t7v-Yg-7lE">
                                 <rect key="frame" x="0.0" y="199" width="375" height="216"/>
                                 <connections>
                                     <outlet property="dataSource" destination="GYE-Zu-Vga" id="0lQ-Iz-L4z"/>
@@ -222,7 +219,7 @@
                                 </constraints>
                                 <state key="normal" title="Save"/>
                                 <connections>
-                                    <action selector="saveContact:" destination="GYE-Zu-Vga" eventType="touchUpInside" id="I8d-N9-9oR"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="addToContactList" id="RBB-cd-TXt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -276,4 +273,7 @@
             <point key="canvasLocation" x="68" y="-7.6461769115442282"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="RBB-cd-TXt"/>
+    </inferredMetricsTieBreakers>
 </document>

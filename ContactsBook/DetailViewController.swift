@@ -14,7 +14,7 @@ class DetailViewController: UIViewController {
     var image: UIImage?
     var id: Int?
     var model: Contacts?
-    var deletedAccount: Bool = false
+    var deleteToPerform: ((Double) -> Void)?
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var phoneLabel: UILabel!
@@ -24,14 +24,13 @@ class DetailViewController: UIViewController {
         nameSurnameLabel.text = name_surname
         phoneLabel.text = phone
         imageView.image = image
-        // Do any additional setup after loading the view.
     }
     
-    @IBAction func closePressed(_ sender: UIButton) {
-//        model?.deleteContact(id!)
-         deletedAccount = true
-        performSegue(withIdentifier: "unwindToContactList", sender: self)
-//        navigationController?.popViewController(animated: true)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "goToContactList"){
+            let destination = segue.destination as! ViewController
+            destination.deletedAcc = id
+        }
     }
     
     /*

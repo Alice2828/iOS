@@ -12,7 +12,7 @@ class AddViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     let options = ["female", "male"]
     var name_surname: String?
     var phone:String?
-    var imageString: String?
+    var imageString: String? = "female"
     var image: UIImage?
     var model: Contacts?
     
@@ -26,6 +26,7 @@ class AddViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return options.count
     }
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         imageString = options[row]
         self.view.endEditing(true)
@@ -38,19 +39,23 @@ class AddViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.pickerView.delegate = self
+        self.pickerView.dataSource = self
         
-    
-    }
-    
-    
-    @IBAction func saveContact(_ sender: UIButton) {
-         name_surname = nameSurname.text
-         phone = phoneNumber.text
-         image = UIImage.init(named: imageString!)!
-         model?.addContact(Contact(name_surname!, phone!, image!))
-        performSegue(withIdentifier: "unwindToContactList", sender: self)
         
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "addToContactList"){
+            let destination = segue.destination as! ViewController
+            name_surname = nameSurname.text
+            phone = phoneNumber.text
+            destination.newName = name_surname
+            destination.newPhone = phone
+            destination.newImage = imageString
+            navigationController?.popViewController(animated: true)
+        }
+    }
+    
     /*
      // MARK: - Navigation
      
