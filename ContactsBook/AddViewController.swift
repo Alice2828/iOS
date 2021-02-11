@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class AddViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     let options = ["female", "male"]
     var name_surname: String?
     var phone:String?
@@ -41,29 +41,22 @@ class AddViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         super.viewDidLoad()
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
-        
-        
+        self.nameSurname.delegate = self
+        self.phoneNumber.delegate = self
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "addToContactList"){
-            let destination = segue.destination as! ViewController
+    
+    // UITextFieldDelegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if(textField == nameSurname){
             name_surname = nameSurname.text
+        }
+        else{
             phone = phoneNumber.text
-            destination.newName = name_surname
-            destination.newPhone = phone
-            destination.newImage = imageString
-            navigationController?.popViewController(animated: true)
         }
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

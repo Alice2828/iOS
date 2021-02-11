@@ -115,19 +115,19 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Surname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wL-jh-J88">
-                                <rect key="frame" x="83" y="32" width="288" height="20.5"/>
+                                <rect key="frame" x="83" y="76" width="288" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luY-hx-PHh">
-                                <rect key="frame" x="87" y="56.5" width="288" height="17"/>
+                                <rect key="frame" x="87" y="100.5" width="288" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yYE-rZ-ntJ">
-                                <rect key="frame" x="16" y="32" width="75" height="73"/>
+                                <rect key="frame" x="16" y="76" width="75" height="73"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="75g-4x-3aJ"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="73" id="GkI-0c-gzr"/>
@@ -142,7 +142,7 @@
                                 </constraints>
                                 <state key="normal" title="Delete"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="goToContactList" id="Hb6-QG-AbC"/>
+                                    <segue destination="6T8-as-dIx" kind="unwind" unwindAction="unwindBack:" id="66t-7E-Qca"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -180,6 +180,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lf1-5D-BLJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="6T8-as-dIx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1876" y="2.2488755622188905"/>
         </scene>
@@ -191,19 +192,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name and surname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hzi-Ip-fLN">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name and surname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hzi-Ip-fLN">
                                 <rect key="frame" x="16" y="85" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uTF-LH-MFz">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uTF-LH-MFz">
                                 <rect key="frame" x="16" y="146" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t7v-Yg-7lE">
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7v-Yg-7lE">
                                 <rect key="frame" x="0.0" y="199" width="375" height="216"/>
                                 <connections>
                                     <outlet property="dataSource" destination="GYE-Zu-Vga" id="0lQ-Iz-L4z"/>
@@ -219,7 +220,7 @@
                                 </constraints>
                                 <state key="normal" title="Save"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="addToContactList" id="RBB-cd-TXt"/>
+                                    <segue destination="aYn-Xe-2Gv" kind="unwind" unwindAction="unwindBack:" id="e6o-VQ-CXK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -251,6 +252,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BVn-lS-vDD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="aYn-Xe-2Gv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2764" y="0.44977511244377816"/>
         </scene>
@@ -273,7 +275,4 @@
             <point key="canvasLocation" x="68" y="-7.6461769115442282"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="RBB-cd-TXt"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -25,22 +25,4 @@ class DetailViewController: UIViewController {
         phoneLabel.text = phone
         imageView.image = image
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "goToContactList"){
-            let destination = segue.destination as! ViewController
-            destination.deletedAcc = id
-        }
-    }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

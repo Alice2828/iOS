@@ -61,7 +61,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
     }
+    @IBAction func unwindBack(_ sender: UIStoryboardSegue){
+      if  let source = sender.source as? AddViewController
+      {
+        newName = source.name_surname
+        newPhone = source.phone
+        newImage = source.imageString
+        }
+        if  let source = sender.source as? DetailViewController
+        {
+            deletedAcc = source.id
+        }
+    }
     
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "mySegue"){
             let destination = segue.destination as! DetailViewController
@@ -93,9 +106,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         myTableView.insertRows(at: [
             NSIndexPath(row: model.getContacts().count-1, section: 0) as IndexPath], with: .automatic)
         myTableView.endUpdates()
-        // myTableView.reloadData()
     }
-    
-    
 }
 
