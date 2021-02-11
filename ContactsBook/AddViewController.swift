@@ -43,6 +43,8 @@ class AddViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         self.pickerView.dataSource = self
         self.nameSurname.delegate = self
         self.phoneNumber.delegate = self
+        pickerView.selectRow(0, inComponent: 0, animated: true)
+        imageString = options[0]
     }
     
     // UITextFieldDelegate
